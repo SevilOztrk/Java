@@ -24,13 +24,14 @@ public class C03_ByLinkText {
 
 
        // WebElement giftCardLinki=driver.findElement(By.linkText("Today's Deals"));
+        //
+        Thread.sleep(4000);
+       WebElement giftCardLinki=driver.findElement(By.partialLinkText("Gift")); // bi parcasıylada locate edilebilir
+       giftCardLinki.click();
 
-        Thread.sleep(2000);
-        WebElement giftCardLinki=driver.findElement(By.partialLinkText("Gift"));
-        giftCardLinki.click();
 
         //istenen sayfaya gittigini test etmek icin
-        // titkle'in Gift Card icerdigini test edebilirz
+        // title'in Gift Card icerdigini test edebilirz
 
         String expectedKelime="Gift Cards";
         String actualTitle=driver.getTitle();

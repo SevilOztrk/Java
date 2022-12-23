@@ -20,27 +20,30 @@ public class C04_Soru {
         driver.manage().window().maximize();
 
         // 2- https://www.automationexercise.com/ adresine gidin
-
         driver.get("https://www.automationexercise.com/");
+
         // 3- Sayfada 147 adet link bulundugunu test edin.
 
         List<WebElement> linkListesi= driver.findElements(By.tagName("a"));
         if (linkListesi.size()==147){
-            System.out.println("Link listesi testi PASPED");
+            System.out.println("Link listesi testi PASSED");
         }else {
             System.out.println("Sayfada" + linkListesi.size()+ "adet link var, test FAILED");
         }
+
         // 4- Products linkine tiklayin
             driver.findElement(By.partialLinkText("Products")).click();
+
         // 5- special offer yazisinin gorundugunu test edin
         WebElement specialOfferElementi=driver.findElement(By.id("sale_image"));
-        // 6- Sayfayi kapatin
 
         if (specialOfferElementi.isDisplayed()){
             System.out.println("Special offer testi PASSED");
         }else {
             System.out.println("Special offer testi FAILED");
         }
+
+        // 6- Sayfayi kapatin
 
         // NoSuchElementException driver findelement ile aradigi bir elementi
         // bulamazsa olusur.

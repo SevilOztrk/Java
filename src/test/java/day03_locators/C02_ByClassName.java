@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import javax.swing.plaf.TableHeaderUI;
 import java.time.Duration;
+import java.util.List;
 
 public class C02_ByClassName {
     public static void main(String[] args) throws InterruptedException {
@@ -26,8 +27,39 @@ public class C02_ByClassName {
         WebElement aramaKutusu=driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
 
+        List<WebElement> fiyatlarListesi=driver.findElements(By.className("a-price-whole"));
+        System.out.println(fiyatlarListesi); // WebElement bir obje oldugundan, direk yazidralaamz.
 
-        // WebElement bir obje oldugundan, direk yazidralaamz.
+        // Bunun icin for each loop kullanarak her bir webelement uzerindeki yazilari tek tek yazdirmaliyiz.
+
+        for (WebElement each: fiyatlarListesi
+             ) {
+            System.out.println(each.getText()); // her bir web elementin uzerindeki yaziyi al
+        }
+
+        // en yuksek fiyati bulmak icin java bilgilerimizi kullanalim
+        // web elementlerden getText ile fiyati String olarak al
+        // String fiyati kiyaslama yapabilmek icin Integer'a cevir
+        // en yuksek fiyati bulup yazdir.
+
+
+        String fiyatStr;
+        Integer fiyat1Int;
+
+        Integer enYuksekFiyat=0;
+
+        // yakup ve Sevil
+        for (WebElement each: fiyatlarListesi
+        ) {
+
+            fiyatStr=each.getText();
+            fiyat1Int=Integer.parseInt(fiyatStr);
+
+            if (fiyat1Int>enYuksekFiyat){
+                enYuksekFiyat=fiyat1Int;
+            }
+        }
+        System.out.println("E.Y.U.F:" + enYuksekFiyat);
 
 
         Thread.sleep(2000);
