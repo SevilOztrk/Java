@@ -20,6 +20,30 @@
     <dependencies>
 
 
+
+        <!--Maven sayesinde projemiz icin gerekli olan tum kutuhnalaeirn
+        github adreslerini buraya yazmamız yeterli olacaktır. github adreslerini bulma ve bu projenin anlayacağı halde buraya ekleme
+        isini mvnrepository.comdan yapıcaz.
+        pom.xml'e ekleyecegimiz dependecy ve plug'inler sayesinde
+        projemizi cok daha efekrtif olarak yönetebilirz-->
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.5.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.3.1</version>
+        </dependency>
+
+
+
+
     </dependencies>
 
 
